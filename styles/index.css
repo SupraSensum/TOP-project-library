@@ -2,6 +2,8 @@
 :root::before,
 :root::after {
    --github-logo-fill-color: rgb(156, 163, 175);
+   --global-max-width: 960px;
+   --global-padding: 1rem 2rem;
 }
 
 * {
@@ -18,20 +20,31 @@ body {
 
 header {
    flex: 0 0 auto;
-   height: 100px;
+   min-height: 100px;
    box-shadow: 0 2px 2px grey;
-   padding: 1rem;
    display: flex;
    align-items: center;
+   justify-content: center;
 }
 
 header h1 {
+   flex: 1;
    margin: 0;
+   max-width: var(--global-max-width);
+   padding: var(--global-padding);
 }
 
 main {
    flex: 1 1 0;
+   align-self: center;
+   width: min(var(--global-max-width), 100%);
+   padding: var(--global-padding);
+}
 
+main .input-fields {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(184px, 1fr));
+   gap: 2rem;
 }
 
 footer {
@@ -40,6 +53,11 @@ footer {
    display: flex;
    align-items: center;
    justify-content: center;
+}
+
+footer a {
+   display: flex;
+   align-items: center;
 }
 
 footer svg {
