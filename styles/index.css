@@ -4,6 +4,9 @@
    --github-logo-fill-color: rgb(156, 163, 175);
    --global-max-width: 960px;
    --global-padding: 1rem 2rem;
+   --light-green: #9fff9c;
+   --light-red: #ff9c9c;
+   --shadow-color: #c0c0c0a4;
 }
 
 * {
@@ -25,7 +28,7 @@ body {
 header {
    flex: 0 0 auto;
    min-height: 100px;
-   box-shadow: 0 2px 2px grey;
+   box-shadow: 0 2px 2px var(--shadow-color);
    display: flex;
    align-items: center;
    justify-content: center;
@@ -50,7 +53,7 @@ main form {
    gap: 1ch;
 }
 
-main form > div {
+main .form-controls {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
    gap: 1ch;
@@ -62,6 +65,15 @@ main label {
 
 main input[type="text"] {
    width: 100%;
+}
+
+main button#readStatus {
+   align-self: end;
+}
+
+main button#addBook {
+   border: 2px solid #bbb;
+   box-shadow: 2px 3px 2px #c0c0c0a4;
 }
 
 footer {
