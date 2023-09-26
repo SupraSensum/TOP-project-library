@@ -71,10 +71,6 @@ main label {
    gap: 0.25ch;
 }
 
-main label input {
-   width: 100%;
-}
-
 main button#submit {
    border: 2px solid #bbb;
    box-shadow: 2px 2px 2px var(--shadow-color);
