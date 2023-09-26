@@ -81,7 +81,7 @@ main form > button {
 }
 
 main button#submit {
-   border: 2px solid #bbb;
+   border: 2px solid var(--font-color);
    box-shadow: 2px 2px 2px var(--shadow-color);
 }
 
