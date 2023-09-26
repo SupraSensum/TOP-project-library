@@ -7,6 +7,7 @@
    --light-green: #9fff9c;
    --light-red: #ff9c9c;
    --shadow-color: #c0c0c0a4;
+   --border-item-radius: 8px;
 }
 
 * {
@@ -51,6 +52,7 @@ main form {
    display: flex;
    flex-direction: column;
    gap: 1ch;
+   margin-bottom: 3rem;
 }
 
 main .form-controls {
@@ -85,6 +87,83 @@ main form .read {
 main form .not-read {
    background-color: var(--light-red);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+main .book-list {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.book-list > .book {
+   min-height: 300px;
+   border: 2px solid red;
+   position: relative;
+   border-radius: 16px;
+   overflow: hidden;
+   box-shadow: 3px 3px 3px var(--shadow-color);
+}
+
+.book-list .border-item {
+   border: 2px solid green;
+   height: 34px;
+   width: 34px;
+   padding: 0;
+   border-radius: 0;
+   display: block;
+   position: absolute;
+   box-shadow: 0 0 3px var(--shadow-color);
+}
+
+.book-list .read-status {
+   top: 0;
+   left: 0;
+   border-radius: 0 0 var(--border-item-radius) 0;
+}
+
+.book-list .num-pages-icon {
+   left: 0;
+   bottom: 0;
+}
+
+.book-list .num-pages {
+   left: 34px;
+   bottom: 0;
+   border-radius: 0 var(--border-item-radius) 0 0;
+}
+
+.book-list .delete-book {
+   bottom: 0;
+   right: 0;
+   border-radius: var(--border-item-radius) 0 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 footer {
    flex: 0 0 auto;
