@@ -16,6 +16,10 @@ body {
    display: flex;
    flex-direction: column;
    min-height: 100vh;
+   font-size: 1.5em;
+   font-weight: 400;
+   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   color: #222;
 }
 
 header {
@@ -29,7 +33,6 @@ header {
 
 header h1 {
    flex: 1;
-   margin: 0;
    max-width: var(--global-max-width);
    padding: var(--global-padding);
 }
@@ -42,13 +45,15 @@ main {
 }
 
 main form {
-   text-align: center;
+   display: flex;
+   flex-direction: column;
+   gap: 1ch;
 }
 
-main .input-fields {
-   display: flex;
-   flex-flow: row-wrap;
-   gap: 2rem;
+main form > div {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   gap: 1ch;
 }
 
 main label {
@@ -82,36 +87,117 @@ footer svg:hover {
    fill: black;
 }
 
-input[type="checkbox"] {
-   appearance: none;
+/*
+* Borrowed from:
+   * Skeleton V2.0.4
+   * Copyright 2014, Dave Gamache
+   * www.getskeleton.com
+   * Free to use under the MIT license.
+   * http://www.opensource.org/licenses/mit-license.php
+   * 12/29/2014
+*/
+
+/* Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+   height: 38px;
+   padding: 0 30px;
+   color: #555;
+   text-align: center;
+   font-size: 11px;
+   font-weight: 600;
+   line-height: 38px;
+   letter-spacing: .1rem;
+   text-decoration: none;
+   white-space: nowrap;
+   background-color: transparent;
+   border-radius: 4px;
+   border: 1px solid #bbb;
+   cursor: pointer;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+   color: #333;
+   border-color: #888;
+   outline: 0;
+}
+
+/* Forms
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+   height: 38px;
+   padding: 6px 10px;
+   /* The 6px vertically centers text on FF, ignored by Webkit */
+   background-color: #fff;
+   border: 1px solid #D1D1D1;
+   border-radius: 4px;
+   box-shadow: none;
+}
+
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
    -webkit-appearance: none;
    -moz-appearance: none;
-   outline: none;
-   border: none;
+   appearance: none;
 }
 
-input[type="checkbox"]::before {
-   content: '';
-   display: inline-block;
-   width: 5ch;
-   height: 3rem;
-   border: 2px solid #333;
-   background-color: #fff;
-   border-radius: 3px;
-   margin-right: 5px;
-   margin-top: 2px;
-   vertical-align: middle;
+textarea {
+   min-height: 65px;
+   padding-top: 6px;
+   padding-bottom: 6px;
 }
 
-input[type="checkbox"]:checked::before {
-   background-color: #007bff;
-   border-color: #007bff;
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+   border: 1px solid #33C3F0;
+   outline: 0;
 }
 
-input[type="checkbox"]:hover::before {
-   border-color: #555;
+label,
+legend {
+   font-weight: 600;
 }
 
-input[type="checkbox"]:focus::before {
-   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+fieldset {
+   padding: 0;
+   border-width: 0;
+}
+
+label>.label-body {
+   font-weight: normal;
 }

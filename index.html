@@ -4,7 +4,6 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>TOP: Project: Library</title>
-   <link rel="stylesheet" href="./styles/skeleton.css">
    <link rel="stylesheet" href="./styles/index.css">
    <script src="./js/index.js"></script>
 </head>
@@ -15,7 +14,7 @@
 
    <main>
       <form action="">
-         <div class="input-fields">
+         <div class="text-controls">
             <label for="bookName">
                book
                <input type="text" name="bookName" id="bookName">
@@ -24,12 +23,11 @@
                author
                <input type="text" name="bookAuthor" id="bookAuthor">
             </label>
-            <label for="bookStatus">
-               status
-               <input type="checkbox" name="bookStatus" id="bookStatus">
-            </label>
          </div>
-         <button id="addBook">+ add book</button>
+         <div class="button-controls">
+            <button type="button" id="readStatus">not read</button>
+            <button type="button" id="addBook">+ add book</button>
+         </div>
       </form>
       <div class="book-list">
 
