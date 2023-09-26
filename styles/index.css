@@ -153,10 +153,11 @@ main .book-list {
    bottom: 0;
 }
 
-.book-list .num-pages {
+.book-list .border-item.num-pages {
    left: 34px;
    bottom: 0;
    border-radius: 0 var(--border-item-radius) 0 0;
+   width: 68px;
 }
 
 .book-list .delete-book {
