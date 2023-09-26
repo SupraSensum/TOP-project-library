@@ -71,6 +71,11 @@ main label {
    gap: 0.25ch;
 }
 
+main form > button {
+   width: 80%;
+   align-self: center;
+}
+
 main button#submit {
    border: 2px solid #bbb;
    box-shadow: 2px 2px 2px var(--shadow-color);
