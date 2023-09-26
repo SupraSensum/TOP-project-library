@@ -73,7 +73,7 @@ main button#readStatus {
 
 main button#addBook {
    border: 2px solid #bbb;
-   box-shadow: 2px 3px 2px #c0c0c0a4;
+   box-shadow: 2px 2px 2px var(--shadow-color);
 }
 
 footer {
