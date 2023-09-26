@@ -4,14 +4,29 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>TOP: Project: Library</title>
+   <link rel="stylesheet" href="./styles/skeleton.css">
    <link rel="stylesheet" href="./styles/index.css">
    <script src="./js/index.js"></script>
 </head>
 <body>
    <header>
       <h1>library</h1>
-      <button id="add_book">+ add book</button>
    </header>
+
+   <main>
+      <form action="">
+         <div class="input-fields">
+            <div class="form-item"><label for="bookName">book</label><input type="text" name="bookName" id="bookName"></div>
+            <div class="form-item"><label for="bookAuthor">author</label><input type="text" name="bookAuthor" id="bookAuthor"></div>
+            <div class="form-item"><label for="bookStatus">status</label><input type="checkbox" name="bookStatus" id="bookStatus"></div>
+         </div>
+         <button id="addBook">+ add book</button>
+      </form>
+      <div class="book-list">
+
+      </div>
+   </main>
+
    <footer>
       <a href="https://github.com/SupraSensum" target="_blank">
          <svg viewBox="0 0 24 24" aria-hidden="true" role="img"

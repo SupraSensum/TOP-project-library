@@ -4,6 +4,44 @@
    --github-logo-fill-color: rgb(156, 163, 175);
 }
 
+* {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+
+body {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+header {
+   flex: 0 0 auto;
+   height: 100px;
+   box-shadow: 0 2px 2px grey;
+   padding: 1rem;
+   display: flex;
+   align-items: center;
+}
+
+header h1 {
+   margin: 0;
+}
+
+main {
+   flex: 1 1 0;
+
+}
+
+footer {
+   flex: 0 0 auto;
+   padding: 4px 1rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
 footer svg {
    height: 24px;
    fill: var(--github-logo-fill-color);
@@ -12,4 +50,37 @@ footer svg {
 
 footer svg:hover {
    fill: black;
+}
+
+input[type="checkbox"] {
+   appearance: none;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   outline: none;
+   border: none;
+}
+
+input[type="checkbox"]::before {
+   content: '';
+   display: inline-block;
+   width: 16px;
+   height: 16px;
+   border: 2px solid #333;
+   background-color: #fff;
+   border-radius: 3px;
+   margin-right: 5px;
+   vertical-align: middle;
+}
+
+input[type="checkbox"]:checked::before {
+   background-color: #007bff;
+   border-color: #007bff;
+}
+
+input[type="checkbox"]:hover::before {
+   border-color: #555;
+}
+
+input[type="checkbox"]:focus::before {
+   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
