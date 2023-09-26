@@ -120,6 +120,10 @@ main .book-list {
    overflow: hidden;
    box-shadow: 3px 3px 3px var(--shadow-color);
    background-color: rgba(255, 255, 255, 0.5);
+   padding: 4rem 2rem;
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
 }
 
 .book-list .border-item {
