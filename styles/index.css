@@ -49,6 +49,7 @@ main {
    align-self: center;
    width: min(var(--global-max-width), 100%);
    padding: var(--global-padding);
+   padding-bottom: 3rem;
    background-color: var(--main-background-color);
 }
 
