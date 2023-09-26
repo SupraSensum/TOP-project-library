@@ -41,10 +41,22 @@ main {
    padding: var(--global-padding);
 }
 
+main form {
+   text-align: center;
+}
+
 main .input-fields {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(184px, 1fr));
+   display: flex;
+   flex-flow: row-wrap;
    gap: 2rem;
+}
+
+main label {
+   text-align: left;
+}
+
+main input[type="text"] {
+   width: 100%;
 }
 
 footer {
@@ -81,12 +93,13 @@ input[type="checkbox"] {
 input[type="checkbox"]::before {
    content: '';
    display: inline-block;
-   width: 16px;
-   height: 16px;
+   width: 5ch;
+   height: 3rem;
    border: 2px solid #333;
    background-color: #fff;
    border-radius: 3px;
    margin-right: 5px;
+   margin-top: 2px;
    vertical-align: middle;
 }
 
