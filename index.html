@@ -17,16 +17,24 @@
          <div class="form-controls">
             <label for="bookName">
                book
-               <input type="text" name="bookName" id="bookName" required>
+               <input type="text" name="bookName" id="bookName" placeholder="Harry Potter and the Philosopher’s Stone" required>
             </label>
             <label for="bookAuthor">
                author
-               <input type="text" name="bookAuthor" id="bookAuthor" required>
+               <input type="text" name="bookAuthor" id="bookAuthor" placeholder="J.K. Rowling" required>
             </label>
-            <button type="button" id="readStatus">not read</button>
+            <label for="bookPageCount">
+               pages
+               <input type="number" name="bookPageCount" id="bookPageCount" placeholder="223" min="0" required>
+            </label>
+            <label for="readStatus">
+               status
+               <button type="button" id="readStatus" class="not-read">not read</button>
+            </label>
          </div>
-         <button type="button" id="addBook">+ add book</button>
+         <button type="button" id="submit">submit</button>
       </form>
+
       <div class="book-list">
 
       </div>
