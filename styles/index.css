@@ -125,6 +125,9 @@ main .book-list {
    display: block;
    position: absolute;
    box-shadow: 0 0 3px var(--shadow-color);
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 .book-list .read-status {
@@ -149,8 +152,6 @@ main .book-list {
    right: 0;
    border-radius: var(--border-item-radius) 0 0 0;
 }
-
-
 
 
 
