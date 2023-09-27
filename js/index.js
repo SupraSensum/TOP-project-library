@@ -36,6 +36,13 @@ function Book(name, author, pageCount, status) {
    this.status = status;
 }
 
+// PROTOTYPE MODS
+
+Book.prototype.delete = (index) => {
+   myLibrary.splice(Number(index), 1);
+   displayEntireLibrary();
+}
+
 // FUNCTIONS
 
 function addBookToLibrary() {
@@ -126,6 +133,7 @@ function displayBook(book) {
    numPagesVal.classList.add('border-item', 'num-pages');
    deleteBookButton.type = 'button';
    deleteBookButton.classList.add('border-item', 'delete-book');
+   deleteBookButton.setAttribute('book-index', myLibrary.indexOf(book).toString());
    deleteBookIcon.src = './assets/delete.svg';
    deleteBookIcon.alt = 'delete icon';
    bookName.classList.add('book-name');
@@ -134,6 +142,9 @@ function displayBook(book) {
    // add event listeners
    readStatusToggle.addEventListener('click', () => {
       toggleCardReadStatus(readStatusToggle, readStatusIcon, book);
+   });
+   deleteBookButton.addEventListener('click', () => {
+      book.delete(deleteBookButton.getAttribute('book-index'));
    });
 
    // add content
