@@ -49,8 +49,7 @@ function addBookToLibrary() {
    // checkIfDuplicateBook();
 
    myLibrary.push(new Book(...grabFormData()));
-
-   console.log(myLibrary);
+   displayEntireLibrary();
 }
 
 function grabFormData() {
