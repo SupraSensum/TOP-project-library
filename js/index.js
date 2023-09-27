@@ -76,15 +76,17 @@ function toggleFormReadStatus() {
    }
 }
 
-function toggleCardReadStatus(element, book) {
-   if (element.classList.contains('read')) {
-      element.classList.remove('read');
-      element.classList.add('not-read');
+function toggleCardReadStatus(container, icon, book) {
+   if (container.classList.contains('read')) {
+      container.classList.remove('read');
+      container.classList.add('not-read');
       book.status = 'not-read';
+      icon.src = './assets/not-read.svg';
    } else {
-      element.classList.remove('not-read');
-      element.classList.add('read');
+      container.classList.remove('not-read');
+      container.classList.add('read');
       book.status = 'read';
+      icon.src = './assets/read.svg';
    }
 }
 
@@ -116,7 +118,7 @@ function displayBook(book) {
    singleBook.classList.add('book');
    readStatusToggle.type = 'button';
    readStatusToggle.classList.add('border-item', 'read-status', book.status === 'read' ? 'read' : 'not-read');
-   readStatusIcon.src = './assets/not-read.svg';
+   readStatusIcon.src = book.status === 'read' ? './assets/read.svg' : './assets/not-read.svg';
    readStatusIcon.alt = 'read status icon';
    numPagesIconContainer.classList.add('border-item', 'num-pages-icon');
    numPagesIcon.src = './assets/pages.svg';
@@ -131,7 +133,7 @@ function displayBook(book) {
 
    // add event listeners
    readStatusToggle.addEventListener('click', () => {
-      toggleCardReadStatus(readStatusToggle, book);
+      toggleCardReadStatus(readStatusToggle, readStatusIcon, book);
    });
 
    // add content
