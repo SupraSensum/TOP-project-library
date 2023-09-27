@@ -41,6 +41,7 @@ function addBookToLibrary() {
    // checkIfDuplicateBook();
 
    myLibrary.push(new Book(...grabFormData()));
+
    console.log(myLibrary);
 }
 
@@ -72,4 +73,54 @@ function toggleReadStatus() {
       formReadStatus.classList.remove('read');
       formReadStatus.classList.add('not-read');
    }
+}
+
+function displayEntireLibrary() {
+   for (const book of myLibrary) {
+      displayBook(book);
+   }
+}
+
+function displayBook(book) {
+   // create each element
+   const singleBook = document.createElement('div');
+   const readStatusToggle = document.createElement('button');
+   const readStatusIcon = document.createElement('img');
+   const numPagesIconContainer = document.createElement('div');
+   const numPagesIcon = document.createElement('img');
+   const numPagesVal = document.createElement('h6');
+   const deleteBookButton = document.createElement('button');
+   const deleteBookIcon = document.createElement('img');
+   const bookName = document.createElement('h2');
+   const bookAuthor = document.createElement('h4');
+
+   // assign attributes
+   singleBook.classList.add('book');
+   readStatusToggle.type = 'button';
+   readStatusToggle.classList.add('border-item', 'read-status', book.status === 'read' ? 'read' : 'not-read');
+   readStatusIcon.src = './assets/not-read.svg';
+   readStatusIcon.alt = 'read status icon';
+   numPagesIconContainer.classList.add('border-item', 'num-pages-icon');
+   numPagesIcon.src = './assets/pages.svg';
+   numPagesIcon.alt = 'pages icon';
+   numPagesVal.classList.add('border-item', 'num-pages');
+   deleteBookButton.type = 'button';
+   deleteBookButton.classList.add('border-item', 'delete-book');
+   deleteBookIcon.src = './assets/delete.svg';
+   deleteBookIcon.alt = 'delete icon';
+   bookName.classList.add('book-name');
+   bookAuthor.classList.add('book-author');
+
+   // add content
+   numPagesVal.textContent = book.pageCount;
+   bookName.textContent = book.name;
+   bookAuthor.textContent = book.author;
+
+   // nest elements
+   readStatusToggle.appendChild(readStatusIcon);
+   numPagesIconContainer.appendChild(numPagesIcon);
+   deleteBookButton.appendChild(deleteBookIcon);
+   singleBook.append(readStatusToggle, numPagesIconContainer, numPagesVal, deleteBookButton, bookName, bookAuthor);
+
+   document.querySelector('.book-list').appendChild(singleBook);
 }
