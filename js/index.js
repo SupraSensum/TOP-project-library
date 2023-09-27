@@ -89,9 +89,14 @@ function toggleCardReadStatus(element, book) {
 }
 
 function displayEntireLibrary() {
+   clearBookList();
    for (const book of myLibrary) {
       displayBook(book);
    }
+}
+
+function clearBookList() {
+   bookList.innerHTML = '';
 }
 
 function displayBook(book) {
