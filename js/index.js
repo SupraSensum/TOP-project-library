@@ -43,6 +43,11 @@ Book.prototype.delete = (index) => {
    displayEntireLibrary();
 }
 
+// INITIATION
+
+myLibrary.push(new Book('Harry Potter and the Philosopher’s Stone', 'J.K. Rowling', '223', 'not-read'));
+displayEntireLibrary();
+
 // FUNCTIONS
 
 function addBookToLibrary() {
