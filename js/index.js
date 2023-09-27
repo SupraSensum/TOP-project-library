@@ -12,6 +12,7 @@ const formBookName = document.getElementById('bookName');
 const formBookAuthor = document.getElementById('bookAuthor');
 const formBookPageCount = document.getElementById('bookPageCount');
 const formReadStatus = document.getElementById('readStatus');
+const bookList = document.querySelector('.book-list');
 
 // EVENT LISTENERS
 
@@ -140,5 +141,5 @@ function displayBook(book) {
    singleBook.append(readStatusToggle, numPagesIconContainer, numPagesVal, deleteBookButton, bookName, bookAuthor);
 
    // shove that book into the world!
-   document.querySelector('.book-list').appendChild(singleBook);
+   bookList.appendChild(singleBook);
 }
