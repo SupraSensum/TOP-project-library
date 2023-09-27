@@ -48,15 +48,17 @@ function grabFormData() {
    const author = formBookAuthor.value
    const pages = formBookPageCount.value
    const status = formReadStatus.textContent
-   clearFormData();
+   resetFormData();
    return [name, author, pages, status];
 }
 
-function clearFormData() {
+function resetFormData() {
    formBookName.value = '';
    formBookAuthor.value = '';
    formBookPageCount.value = '';
-   formReadStatus.textContent;
+   formReadStatus.textContent = 'not read';
+   formReadStatus.classList.remove('read');
+   formReadStatus.classList.add('not-read');
 }
 
 
