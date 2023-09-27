@@ -24,7 +24,7 @@ formSubmitButton.addEventListener('click', (e) => {
       alert("Invalid form data");
    }
 });
-formReadStatus.addEventListener('click', toggleReadStatus);
+formReadStatus.addEventListener('click', toggleFormReadStatus);
 
 // CONSTRUCTORS
 
@@ -63,7 +63,7 @@ function resetFormData() {
    formReadStatus.classList.add('not-read');
 }
 
-function toggleReadStatus() {
+function toggleFormReadStatus() {
    if (formReadStatus.textContent === 'not read') {
       formReadStatus.textContent = 'read';
       formReadStatus.classList.remove('not-read');
@@ -72,6 +72,18 @@ function toggleReadStatus() {
       formReadStatus.textContent = 'not read';
       formReadStatus.classList.remove('read');
       formReadStatus.classList.add('not-read');
+   }
+}
+
+function toggleCardReadStatus(element, book) {
+   if (element.classList.contains('read')) {
+      element.classList.remove('read');
+      element.classList.add('not-read');
+      book.status = 'not-read';
+   } else {
+      element.classList.remove('not-read');
+      element.classList.add('read');
+      book.status = 'read';
    }
 }
 
@@ -111,6 +123,11 @@ function displayBook(book) {
    bookName.classList.add('book-name');
    bookAuthor.classList.add('book-author');
 
+   // add event listeners
+   readStatusToggle.addEventListener('click', () => {
+      toggleCardReadStatus(readStatusToggle, book);
+   });
+
    // add content
    numPagesVal.textContent = book.pageCount;
    bookName.textContent = book.name;
@@ -122,5 +139,6 @@ function displayBook(book) {
    deleteBookButton.appendChild(deleteBookIcon);
    singleBook.append(readStatusToggle, numPagesIconContainer, numPagesVal, deleteBookButton, bookName, bookAuthor);
 
+   // shove that book into the world!
    document.querySelector('.book-list').appendChild(singleBook);
 }
