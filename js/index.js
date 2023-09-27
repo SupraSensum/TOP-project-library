@@ -24,6 +24,7 @@ formSubmitButton.addEventListener('click', (e) => {
       alert("Invalid form data");
    }
 });
+formReadStatus.addEventListener('click', toggleReadStatus);
 
 // CONSTRUCTORS
 
@@ -61,7 +62,14 @@ function resetFormData() {
    formReadStatus.classList.add('not-read');
 }
 
-
-
-
-
+function toggleReadStatus() {
+   if (formReadStatus.textContent === 'not read') {
+      formReadStatus.textContent = 'read';
+      formReadStatus.classList.remove('not-read');
+      formReadStatus.classList.add('read');
+   } else {
+      formReadStatus.textContent = 'not read';
+      formReadStatus.classList.remove('read');
+      formReadStatus.classList.add('not-read');
+   }
+}
