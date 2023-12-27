@@ -27,22 +27,6 @@ formSubmitButton.addEventListener('click', (e) => {
 });
 formReadStatus.addEventListener('click', toggleFormReadStatus);
 
-// CONSTRUCTORS
-
-function Book(name, author, pageCount, status) {
-   this.author = author;
-   this.name = name;
-   this.pageCount = pageCount;
-   this.status = status;
-}
-
-// PROTOTYPE MODS
-
-Book.prototype.delete = (index) => {
-   myLibrary.splice(Number(index), 1);
-   displayEntireLibrary();
-}
-
 // INITIATION
 
 myLibrary.push(new Book('Harry Potter and the Philosopher’s Stone', 'J.K. Rowling', '223', 'not-read'));
